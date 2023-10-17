@@ -1,0 +1,118 @@
+{
+    "name": "react-webkit-template",
+    "version": "1.0.0",
+    "description": "Personal website built with TypeScript React",
+    "main": "src/index.tsx",
+    "scripts": {
+        "start": "webpack serve  --hot --open",
+        "build": "webpack --config webpack.config.js --mode production",
+        "precise-commits": "precise-commits",
+        "lint-staged": "lint-staged",
+        "lint-prepush": "lint-prepush",
+        "build-storybook": "storybook build",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+        "lint": "eslint src",
+        "prepare": "husky install",
+        "prepublishOnly": "npm run build",
+        "storybook": "storybook dev -p 6006",
+        "test": "jest --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fluse9/Personal-Website.git"
+    },
+    "keywords": [],
+    "author": "Frank Luse",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fluse9/Personal-Website/issues"
+    },
+    "homepage": "https://github.com/fluse9/Personal-Website#readme",
+    "dependencies": {
+        "@storybook/react": "^7.4.1",
+        "component-library": "github:fluse9/component-library#develop",
+        "prop-types": "^15.8.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "styled-components": "^5.3.10"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.21.8",
+        "@babel/preset-env": "^7.21.5",
+        "@babel/preset-react": "^7.18.6",
+        "@babel/preset-typescript": "^7.21.5",
+        "@storybook/addon-essentials": "^7.4.1",
+        "@storybook/addon-interactions": "^7.4.1",
+        "@storybook/addon-links": "^7.4.1",
+        "@storybook/blocks": "^7.4.1",
+        "@storybook/cli": "^7.4.1",
+        "@storybook/react-webpack5": "^7.4.1",
+        "@storybook/testing-library": "^0.2.0",
+        "@testing-library/jest-dom": "^5.17.0",
+        "@testing-library/react": "^14.0.0",
+        "@types/jest": "^29.5.1",
+        "@types/react": "^18.2.6",
+        "@types/react-dom": "^18.2.4",
+        "@types/react-test-renderer": "^18.0.1",
+        "@types/storybook__react": "^5.2.1",
+        "@types/styled-components": "^5.1.26",
+        "@typescript-eslint/eslint-plugin": "^5.13.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "babel-loader": "^9.1.2",
+        "css-loader": "^6.7.3",
+        "eslint": "^8.41.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-import-resolver-node": "^0.3.7",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "eslint-plugin-storybook": "^0.6.13",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.0",
+        "husky": "^8.0.3",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jest-styled-components": "^7.1.1",
+        "jsdom": "^22.1.0",
+        "lint-prepush": "^2.2.1",
+        "lint-staged": "^13.2.2",
+        "path": "^0.12.7",
+        "precise-commits": "^1.0.2",
+        "prettier": "^2.8.8",
+        "react-test-renderer": "^18.2.0",
+        "storybook": "^7.4.1",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.5.0",
+        "typescript": "^5.0.4",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.11.1"
+    },
+    "lint-staged": {
+        "**/*.{js,jsx,ts,tsx}": [
+            "eslint src"
+        ]
+    },
+    "lint-prepush": {
+        "base": "develop",
+        "tasks": {
+            "**/*.{js,jsx,ts,tsx}": [
+                "eslint src"
+            ]
+        }
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "@testing-library/jest-dom/extend-expect"
+        ],
+        "testEnvironment": "jsdom",
+        "testMatch": [
+            "**/*.test.tsx",
+            "**/*.test.ts"
+        ]
+    }
+}
